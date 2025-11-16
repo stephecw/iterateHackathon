@@ -49,3 +49,35 @@ Main components in `quantcoach-livekit/`:
 ---
 
 ## Project Structure
+
+quantcoach-livekit/
+backend/ # FastAPI, agents
+frontend/ # React/Vite dashboard
+.env.example
+quantcoach-livekit/backend/.env.example
+quantcoach-livekit/frontend/.env.example
+IMPLEMENTATION_GUIDE.md
+
+
+
+## Quick Start
+
+cd quantcoach-livekit/backend
+python -m venv .venv
+source .venv/bin/activate   # macOS/Linux
+# .venv\Scripts\activate    # Windows
+pip install -r requirements.txt
+
+cd quantcoach-livekit/frontend
+npm install
+
+npm run dev
+
+## How it works
+
+Creating a room automatically starts an agent.
+
+The agent processes audio, sends data to LLM evaluators, and emits SSE events.
+
+The frontend listens to the SSE stream and updates charts in real time.
+
