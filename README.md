@@ -1,6 +1,8 @@
 # Context
 
 This project was originally created during the Iterate Paris Hackathon (November 15–16), organized by Maki, Source & Motier, and powered by Anthropic, Lovable, ElevenLabs, Unaite, and Iterate.
+
+
 The event took place at La Maison by Motier Ventures, with mentorship and jury members from leading AI organizations including Hugging Face, Anthropic, H Company, and more.
 
 # BetterVue — Quick Start
