@@ -94,21 +94,12 @@ class TranscriptBuffer:
         if len(self.buffer) < self.min_transcripts_for_evaluation:
             return None
 
-        # Trigger condition 1: Time-based (window exceeded)
+        # Trigger condition: Time-based only (every 30 seconds)
         if window_duration >= self.window_size_seconds:
             should_evaluate = True
             trigger_reason = "time_limit"
             logger.debug(
                 f"Triggering evaluation: time limit reached ({window_duration:.1f}s)"
-            )
-
-        # Trigger condition 2: Speaker turn (hybrid mode)
-        elif speaker_changed and window_duration >= 5.0:
-            # Only trigger on speaker turn if we have at least 5s of content
-            should_evaluate = True
-            trigger_reason = "speaker_turn"
-            logger.debug(
-                f"Triggering evaluation: speaker turn after {window_duration:.1f}s"
             )
 
         if should_evaluate:

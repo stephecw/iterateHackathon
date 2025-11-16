@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from "react";
 import DashboardHeader from "@/components/dashboard/DashboardHeader";
-import MetricsPanel from "@/components/dashboard/MetricsPanel";
 import TranscriptFeed from "@/components/dashboard/TranscriptFeed";
 import { VideoArea } from "@/components/video/VideoArea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -185,7 +184,6 @@ const Index = () => {
             {/* Right Column - Fixed Width - Alerts & Metrics */}
             <div className="col-span-3 h-full overflow-y-auto space-y-2 pl-2">
               <RedFlagPanel evaluations={evaluations} />
-              <MetricsPanel metrics={metrics} />
             </div>
           </div>
         </div>

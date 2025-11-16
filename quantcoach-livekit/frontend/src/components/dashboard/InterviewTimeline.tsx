@@ -113,13 +113,12 @@ const InterviewTimeline = ({
         </div>
       </div>
 
-      <ScrollArea className="w-full whitespace-nowrap">
-        <div className="relative pb-2 overflow-x-auto">
-          {/* Timeline line */}
-          <div className="absolute left-0 right-0 top-4 h-0.5 bg-gray-200" />
-
+      <ScrollArea className="w-full" orientation="horizontal">
+        <div className="relative pb-2">
           {/* Timeline segments - Compact Version */}
-          <div className="flex gap-1 relative inline-flex min-w-full">
+          <div className="flex gap-1 relative" style={{ minWidth: 'max-content' }}>
+            {/* Timeline line */}
+            <div className="absolute left-0 right-0 top-4 h-0.5 bg-gray-200" style={{ width: '100%' }} />
             <TooltipProvider>
               {evaluations.map((evaluation, index) => {
                 const colors = getSegmentColor(
